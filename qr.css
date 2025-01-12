@@ -1,0 +1,45 @@
+
+/* 
+qr code page css */
+.payment-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1A5319;
+    border-radius: 8px;
+}
+
+.qr-code {
+    margin: 20px 0;
+}
+
+.qr-image {
+    width: 300px; /* Increased size for the QR code */
+    height: auto;
+    border: 2px solid #1A5319;
+    border-radius: 8px;
+}
+
+.donation-amount {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #1A5319;
+}
+
+.why-upi ul {
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.why-upi li {
+    margin-bottom: 10px;
+}
+/* 
+.footer-links a {
+    color: white
+    text-decoration: none;
+} */

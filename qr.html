@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate via UPI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="qr.css">
+    <link rel="icon" type="image/x-icon" href="./images/Favicon_icon.jpg">
+</head>
+<body>
+
+    <!-- Side Menu -->
+    <nav id="sideMenu" class="side-menu collapsed">
+        <div id="menuToggle" class="menu-toggle">&#9776;</div>
+        <ul class="menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html"><img src="./images/TreeforMe_logo.png" alt="TreeForMe Logo" class="logo"> </a>
+        </div>
+    </header>
+
+    <div class="payment-container">
+        <h1>Support Us by Donating via UPI</h1>
+        <p>Scan the QR code below to make a donation and help us plant trees for a greener tomorrow.</p>
+        
+        <!-- QR Code Section -->
+        <div class="qr-code">
+            <img src="./images/qr payment.jpg" alt="QR Code for UPI Payment" class="qr-image"> <!-- Replace this with the actual QR code image -->
+            <p><strong>UPI ID:</strong> ak3012498@okhdfcbank</p>
+        </div>
+
+        <!-- Display Donation Amount -->
+        <div class="donation-amount">
+            <p><strong>Your Donation Amount:</strong> ₹<span id="donationAmount">0</span></p>
+        </div>
+
+        <!-- Reasons for Choosing UPI -->
+        <div class="why-upi">
+            <h2>Why UPI?</h2>
+            <ul>
+                <li>We are a new website, and we want to minimize overhead costs.</li>
+                <li>Using UPI allows us to avoid payment gateway fees, ensuring more funds go directly towards planting trees.</li>
+                <li>UPI is secure, instant, and trusted by millions of users across India.</li>
+                <li>Your support directly impacts our ability to grow and sustain this initiative.</li>
+            </ul>
+            <p>Once your payment is received, we will verify and confirm your donation. Your planted tree will be posted in our gallery within 48-72 hours.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 TreeForMe. All rights reserved. Together, we can make the world greener.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a> |
+            <a href="gallery.html">Gallery</a> |
+            <a href="donate.html">Donate Now</a> |
+            <a href="about.html">About Us</a>
+        </div>
+    </footer>
+
+    <!-- Script to fetch the donation amount from localStorage -->
+    <script>
+        
+// Retrieve the donation amount from localStorage and display it
+const donationAmount = localStorage.getItem('donationAmount');
+document.getElementById('donationAmount').textContent = donationAmount ? donationAmount : '0';
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Collapsible Side Menu
+const sideMenu = document.getElementById('sideMenu');
+const menuToggle = document.getElementById('menuToggle');
+
+// Toggle the sidebar when the menu toggle button is clicked
+menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click event from propagating to the document
+    sideMenu.classList.toggle('collapsed');
+});
+
+// Collapse the sidebar when clicking outside of it
+document.addEventListener('click', function(event) {
+    // Only collapse if the menu is open and the click is outside the menu and the toggle button
+    if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target) && !sideMenu.classList.contains('collapsed')) {
+        sideMenu.classList.add('collapsed');
+    }
+});
+
+
+    </script>
+
+</body>
+</html>

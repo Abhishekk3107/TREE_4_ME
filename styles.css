@@ -1,0 +1,260 @@
+/* General Styling */
+
+/* Apply Tenor Sans to the entire site */
+body {
+    font-family: 'Tenor Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Global background color white */
+    color: #1A5319;
+}
+
+/* Header */
+header {
+    background-color: #1A5319; /* Dark green background */
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.logo {
+    max-width: 10rem ; /* Maximum size for the logo on larger screens */
+    width: 100%;       /* Full width for smaller screens */
+    height: auto;      /* Maintains aspect ratio */
+}
+
+header h1 {
+    font-size: 3rem;
+    color: white; /* Dark Brown, wood-like color */
+}
+
+header p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: white; /* White subtitle text */
+}
+
+/* Side Menu Bar */
+#sideMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+    padding-top: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for both width and background */
+    overflow: hidden;
+}
+
+#sideMenu.collapsed {
+    width: 60px; /* When collapsed, it shrinks to 60px */
+    background-color: rgba(0, 0, 0, 0); /* Keep transparent when collapsed */
+}
+
+#sideMenu:not(.collapsed) {
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity when expanded */
+}
+
+#sideMenu ul {
+    list-style-type: none;
+    padding: 0;
+    transition: opacity 0.3s ease;  /* Smooth fade-out of menu items */
+}
+
+#sideMenu.collapsed ul {
+    opacity: 0;  /* Fade out the menu items when collapsed */
+    display: none;  /* Hides them completely once the animation finishes */
+}
+
+#sideMenu ul li {
+    margin: 20px 0;
+}
+
+#sideMenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+#sideMenu ul li a:hover {
+    background-color: #1A5319;
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://example.com/forest.jpg'); /* Replace with an actual tree image */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.cta-button {
+    background-color: #508D4E;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #1A5319;
+}
+
+/* About Initiative */
+.about-initiative {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    padding: 40px;
+    text-align: center;
+    color: #1A5319;
+}
+
+.about-initiative h2 {
+    font-size: 2rem;
+}
+
+.about-initiative p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.about-initiative ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.about-initiative ul li {
+    margin: 10px 0;
+}
+
+/* Importance of Trees */
+.importance-trees {
+    background-color: #1A5319; /* Dark Green */
+    padding: 40px;
+    color: white;
+}
+
+.importance-trees h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.tree-info {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    flex-wrap: wrap; /* Ensures the layout wraps on smaller screens */
+}
+
+.info-column {
+    width: 30%;
+    margin-bottom: 20px; /* Adds spacing between rows on smaller screens */
+}
+
+.info-column img {
+    width: 100%;      /* Ensures the image takes up the full width of its container */
+    height: 200px;    /* Set a fixed height for uniformity */
+    object-fit: cover; /* Ensures the image maintains aspect ratio without distortion */
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+
+.info-column h3 {
+    font-size: 1.5rem;
+    color: #80AF81; /* Lighter green for contrast */
+}
+/* 
+.info-column img {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 8px;
+} */
+
+/* Call to Action */
+.cta-section {
+    background-color: #481f01;
+    padding: 40px;
+    text-align: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #1A5319;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tree-info {
+        flex-direction: column;
+    }
+
+    .info-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Background Image Styling */
+body {
+    background-image: url('./images/Hero_bg.jpg'); /* Add the image URL here */
+    background-size: cover;
+    background-position: center;
+    
+    background-attachment: fixed; 
+}
+
+/* Ensuring readability over the background image */
+.about-initiative, .importance-trees {
+    background-color: rgba(255, 255, 255, 0.8); /* Add slight transparency */
+    padding: 40px;
+    text-align: center;
+    color: #1A5319;
+}
+

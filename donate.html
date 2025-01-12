@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now! - TreeforMe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="icon" type="image/x-icon" href="images/Favicon_icon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>
+        .cost-info {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #1A5319;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Side Menu -->
+    <nav id="sideMenu" class="side-menu collapsed">
+        <div id="menuToggle" class="menu-toggle">&#9776;</div>
+        <ul class="menu-items">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="donate.html">Donate Now</a></li>
+            <li><a href="About.html">About Us</a></li>
+        </ul>
+    </nav>
+    
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html"><img src="./images/TreeforMe_logo.png" alt="TreeForMe Logo" class="logo"> </a>
+        </div>
+    </header>
+
+    <div class="donate-container">
+        <h1>Plant by your name!</h1>
+        <form class="donate-form" id="donateForm" action="https://formspree.io/f/xrbgkbgr" method="POST">
+            <input type="text" name="YourName" placeholder="Your Name" required>
+            <input type="email" name="YourEmail" placeholder="Your Email" required>
+            <input type="city" name="YourCity" placeholder="Your City" required>
+
+            <input type="number" name="plantCount" id="plantCount" placeholder="Plant Count" required>
+            <div id="costInfo" class="cost-info"></div>
+            <input type="submit" value="Donate Now">
+        </form>
+        
+    </div>
+
+    <footer>
+        <p>© 2024 TreeForMe. All rights reserved. Together, we can make the world greener.</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a> |
+            <a href="gallery.html">Gallery</a> |
+            <a href="donate.html">Donate Now</a> |
+            <a href="About.html">About Us</a>
+        </div>
+    </footer>
+
+    <script>
+        // Display total cost based on plant count input
+        document.getElementById('plantCount').addEventListener('input', function () {
+            const plantCount = parseInt(this.value) || 0;
+            const costPerPlant = 50;
+            const totalCost = plantCount * costPerPlant;
+            const costInfoDiv = document.getElementById('costInfo');
+
+            if (plantCount > 0) {
+                costInfoDiv.textContent = `Total Cost: ₹${totalCost} for ${plantCount} plants.`;
+            } else {
+                costInfoDiv.textContent = '';
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Collapsible Side Menu
+        const sideMenu = document.getElementById('sideMenu');
+        const menuToggle = document.getElementById('menuToggle');
+
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            sideMenu.classList.toggle('collapsed');
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target) && !sideMenu.classList.contains('collapsed')) {
+                sideMenu.classList.add('collapsed');
+            }
+        });
+
+        document.getElementById('donateForm').addEventListener('submit', (e) => {
+   //  e.preventDefault();  
+    // The form will now submit to the PHP script
+});
+document.getElementById('donateForm').addEventListener('submit', (e) => {
+    // Optional: Show a confirmation message or spinner
+    setTimeout(() => {
+        // Redirect to qr.html after submission
+        window.location.href = 'qr.html';
+    }, 500); // Adjust the delay as needed (500 ms should be sufficient for most cases)
+});
+
+        // Save donation amount to local storage and redirect on form submission
+       /* document.getElementById('donateForm').addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            const plantCountInput = document.querySelector('input[name="plantCount"]');
+            const plantCount = parseInt(plantCountInput.value, 10) || 0;
+            const donationAmount = plantCount * 50;
+            localStorage.setItem('donationAmount', donationAmount);
+
+            // Redirect to the UPI payment page
+            window.location.href = 'qr.html';
+        });*/
+    </script>
+
+</body>
+</html>

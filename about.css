@@ -1,0 +1,167 @@
+/* General Styling */
+body {
+    font-family: 'Tenor Sans', sans-serif; /* Use the same font as the landing page */
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Global background color white */
+    color: #1A5319;
+}
+
+
+/* Side Menu Bar */
+#sideMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); /* Initially transparent */
+    padding-top: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease; /* Smooth transition for both width and background */
+    overflow: hidden;
+}
+
+#sideMenu.collapsed {
+    width: 60px; /* When collapsed, it shrinks to 60px */
+    background-color: rgba(0, 0, 0, 0); /* Keep transparent when collapsed */
+}
+
+#sideMenu:not(.collapsed) {
+    background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity when expanded */
+}
+
+#sideMenu ul {
+    list-style-type: none;
+    padding: 0;
+    transition: opacity 0.3s ease;  /* Smooth fade-out of menu items */
+}
+
+#sideMenu.collapsed ul {
+    opacity: 0;  /* Fade out the menu items when collapsed */
+    display: none;  /* Hides them completely once the animation finishes */
+}
+
+#sideMenu ul li {
+    margin: 20px 0;
+}
+
+#sideMenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+#sideMenu ul li a:hover {
+    background-color: #1A5319;
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    background-color: #1A5319; /* Match the dark green used on the landing page */
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+.logo {
+    max-width: 20rem;  /* Maximum size for the logo on larger screens */
+    width: 100%;       /* Full width for smaller screens */
+    height: auto;      /* Maintains aspect ratio */
+}
+
+header h1 {
+    font-size: 3rem; /* Ensure consistency in font size */
+    color: white;
+}
+
+/* Main Section with Grid Layout */
+main {
+    padding: 20px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two sections per row */
+    grid-gap: 20px; /* Gap between grid items */
+}
+
+section {
+    background: rgba(255, 255, 255, 0.8); /* Add slight transparency like the landing page */
+    padding: 20px;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: #1A5319; /* Consistent text color */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px; /* Ensure that sections have a consistent height */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+section:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Elevate the box-shadow on hover */
+    transform: scale(1.03); /* Slightly scale the section up */
+    background-color: rgba(255, 255, 255, 0.9); /* Change background color to be slightly lighter on hover */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1A5319; /* Same dark green used throughout */
+}
+
+/* Center Contact Section */
+.contact {
+    background-color: rgba(255, 255, 255, 0.8); /* Match transparency used elsewhere */
+    padding: 40px;
+    text-align: center;
+    color: #1A5319;
+    grid-column: 1 / -1; /* Make contact section span across both columns */
+    border-radius: 25px; /* Rounded corners for the contact section as well */
+    min-height: 250px;
+}
+
+.contact a {
+    color: #1A5319; /* Same green color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #1A5319; /* Match the footer background color to the landing page */
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Switch to a single-column layout on smaller screens */
+    }
+
+    .contact {
+        grid-column: 1 / 1; /* Ensure contact section spans entire width on small screens */
+    }
+}

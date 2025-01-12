@@ -1,0 +1,20 @@
+/* gallery css */
+.gallery-container {
+    text-align: center;
+    padding: 50px;
+    color: #1A5319;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+    border-radius: 10px; /* Optional: rounded corners */
+    max-width: 800px; /* Optional: limit width for better readability */
+    margin: 0 auto; /* Center the container */
+}
+
+.placeholder-content {
+    border: 2px dashed #1A5319;
+    padding: 40px;
+    margin-top: 20px;
+    font-style: italic;
+    color: #888;
+    background-color: rgba(255, 255, 255, 0.8); /* Transparent white background for placeholder */
+    border-radius: 8px;
+}

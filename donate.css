@@ -1,0 +1,177 @@
+body {
+    font-family: 'Tenor Sans', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #1A5319;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.logo {
+    max-width: 8rem;
+    width: 100%;
+    height: auto;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: white;
+}
+
+header p {
+    font-size: 1rem;
+    font-style: italic;
+    color: white;
+}
+
+/* Side Menu */
+#sideMenu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    padding-top: 20px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+}
+
+#sideMenu.collapsed {
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#sideMenu:not(.collapsed) {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#sideMenu ul {
+    list-style-type: none;
+    padding: 0;
+    transition: opacity 0.3s ease;
+}
+
+#sideMenu.collapsed ul {
+    opacity: 0;
+    display: none;
+}
+
+#sideMenu ul li {
+    margin: 20px 0;
+}
+
+#sideMenu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+#sideMenu ul li a:hover {
+    background-color: #1A5319;
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Donate Container */
+.donate-container {
+    max-width: 90%;
+    margin: 20px auto;
+    background: rgba(256, 256, 256, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15rem;
+}
+
+.donate-container h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #1A5319;
+    margin-bottom: 20px;
+}
+
+/* Donate Form - Two Column Layout */
+.donate-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 20px;
+}
+
+.donate-form input,
+.donate-form select {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make certain items span full width */
+.donate-form input[type="submit"],
+.donate-form #costInfo {
+    grid-column: span 2; /* Span across both columns */
+}
+
+.donate-form input[type="submit"] {
+    background-color: #508D4E;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.donate-form input[type="submit"]:hover {
+    background-color: #1A5319;
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1A5319;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        max-width: 6rem;
+    }
+
+    .donate-container {
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        font-size: 1.5rem;
+    }
+
+    .donate-form {
+        grid-template-columns: 1fr; /* Revert to single-column on smaller screens */
+    }
+}
