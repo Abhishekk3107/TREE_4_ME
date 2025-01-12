@@ -112,7 +112,12 @@
             localStorage.setItem('donationAmount', donationAmount);
 
             // Redirect to the UPI payment page
-            window.location.href = 'qr.html';
+setTimeout(() => {
+        // Redirect to qr.html after submission
+        window.location.href = 'qr.html';
+    }, 500);
+
+            //window.location.href = 'qr.html';
         });
     </script>
 
