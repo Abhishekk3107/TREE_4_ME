@@ -111,12 +111,12 @@ document.getElementById('donateForm').addEventListener('submit', (e) => {
     // Optional: Show a confirmation message or spinner
     setTimeout(() => {
         // Redirect to qr.html after submission
-        window.location.href = 'qr.html';
+      /*  window.location.href = 'qr.html';
     }, 500); // Adjust the delay as needed (500 ms should be sufficient for most cases)
-});
+});*/
 
         // Save donation amount to local storage and redirect on form submission
-       /* document.getElementById('donateForm').addEventListener('submit', (e) => {
+        document.getElementById('donateForm').addEventListener('submit', (e) => {
             e.preventDefault(); // Prevent default form submission
 
             const plantCountInput = document.querySelector('input[name="plantCount"]');
@@ -126,7 +126,7 @@ document.getElementById('donateForm').addEventListener('submit', (e) => {
 
             // Redirect to the UPI payment page
             window.location.href = 'qr.html';
-        });*/
+        });
     </script>
 
 </body>
