@@ -104,21 +104,17 @@
         });
 
         document.getElementById('donateForm').addEventListener('submit', (e) => {
-            e.preventDefault(); // Prevent default form submission
+    // Store the donation amount in localStorage
+    const plantCountInput = document.querySelector('input[name="plantCount"]');
+    const plantCount = parseInt(plantCountInput.value, 10) || 0;
+    const donationAmount = plantCount * 50;
+    localStorage.setItem('donationAmount', donationAmount);
 
-            const plantCountInput = document.querySelector('input[name="plantCount"]');
-            const plantCount = parseInt(plantCountInput.value, 10) || 0;
-            const donationAmount = plantCount * 50;
-            localStorage.setItem('donationAmount', donationAmount);
-
-            // Redirect to the UPI payment page
-setTimeout(() => {
-        // Redirect to qr.html after submission
+    // Allow form submission to Formspree, then redirect
+    setTimeout(() => {
         window.location.href = 'qr.html';
-    }, 500);
-
-            //window.location.href = 'qr.html';
-        });
+    }, 500); // Redirect after submission
+});
     </script>
 
 </body>
